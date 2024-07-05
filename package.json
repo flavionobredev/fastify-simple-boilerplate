@@ -1,0 +1,28 @@
+{
+  "name": "simple-fastify-boilerplate-test",
+  "version": "1.0.0",
+  "description": "Simple Fastify boilerplate with TypeScript and SWC",
+  "main": "src/index.ts",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc --noEmit && swc src --strip-leading-paths --out-dir dist",
+    "build:tsc": "npm run prebuild && tsc --project tsconfig.build.json",
+    "start:dev": "ts-node-dev -r tsconfig-paths/register --clear --watch src src/index.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "author": "Flávio Nobre <flavionobredev@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.5.0",
+    "@swc/helpers": "^0.5.11",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "fastify": "^4.26.2"
+  }
+}
